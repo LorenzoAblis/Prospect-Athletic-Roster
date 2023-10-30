@@ -6,19 +6,27 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct ContentView: View {
+    @EnvironmentObject var dataManager: DataManager
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            List(dataManager.teams, id: \.self) { team in
+                Text(team.name)
+                ForEach(team.players, id: \.self) { player in
+                    Text(player.name)
+                }
+            }
         }
         .padding()
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .environmentObject(DataManager())
+    }
 }
