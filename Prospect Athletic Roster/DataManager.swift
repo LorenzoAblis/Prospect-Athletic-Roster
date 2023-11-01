@@ -15,16 +15,14 @@ class DataManager: ObservableObject {
     @Published var teams: [Team] = []
     
     init() {
-        fetchTeams {
-            
-        }
+//        fetchTeams {}
     }
     
-    func fetchTeams(completion: @escaping () -> Void) {
+    func fetchTeams() {
         teams.removeAll()
         
-        let database = Firestore.firestore()
-        let collection = database.collection("teams")
+        let db = Firestore.firestore()
+        let collection = db.collection("teams")
         
         Task {
             do {
@@ -52,62 +50,57 @@ class DataManager: ObservableObject {
                     self.teams.append(team)
                 }
                 
-                completion()
+//                completion()
             } catch {
                 print(error.localizedDescription)
             }
         }
     }
-
     
-//    func fetchTeams() {
-//        teams.removeAll()
-//        let database = Firestore.firestore()
-//        let collection = database.collection("teams")
-//        
-//        collection.getDocuments { team_snapshot, error in
-//            guard error == nil else {
-//                print(error!.localizedDescription)
-//                return
-//            }
-//            
-//            if let team_snapshot = team_snapshot {
-//                for team_document in team_snapshot.documents {
-//                    let team_data = team_document.data()
-//                    var team = Team(id: "", name: "", season: "", coaches: [], players: [])
-//                    
-//                    let coaches_collection = team_document.reference.collection("coaches")
-//                    
-//                    coaches_collection.getDocuments { coach_snapshot, error in
-//                        guard error == nil else {
-//                            print(error!.localizedDescription)
-//                            return
-//                        }
-//                        
-//                        if let coach_snapshot = coach_snapshot {
-//                            for coach_document in coach_snapshot.documents {
-//                                let coach_data = coach_document.data()
-//                                var coach = Coach(id: "", name: "", positon: "")
-//                                
-//                                coach.id = coach_document.documentID
-//                                coach.name = coach_data["name"] as? String ?? ""
-//                                coach.positon = coach_data["position"] as? String ?? ""
-//                                
-//                                team.coaches.append(coach)
-//                            }
-//                        }
-//                    }
-//                    
-//                    team.id = team_document.documentID
-//                    team.name = team_data["name"] as? String ?? ""
-//                    team.season = team_data["season"] as? String ?? ""
-//                    
-//                    
-//                    
-//                    self.teams.append(team)
-//                }
-//            }
-//            
-//        }
-//    }
+    
+    func addTeam(name: String, season: String) {
+        let db = Firestore.firestore()
+        let team_collection = db.collection("teams")
+        
+        team_collection.document().setData(["name": name, "season": season]) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
+        fetchTeams()
+//        fetchTeams {}
+    }
+    
+    func deleteteam(teamID: String) {
+        let db = Firestore.firestore()
+        let team_collection = db.collection("teams")
+        
+        team_collection.document(teamID).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            }
+            else {
+                print("Document successfully removed!")
+            }
+        }
+        
+        fetchTeams()
+//        fetchTeams {}
+    }
+    
+    func addCoach(teamID: String, name: String, position: String) {
+        let db = Firestore.firestore()
+        let coaches_collection = db.collection("teams").document(teamID).collection("coaches")
+        
+        coaches_collection.document().setData(["name": name, "position": position]) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
+        fetchTeams()
+//        fetchTeams {}
+    }
+    
 }

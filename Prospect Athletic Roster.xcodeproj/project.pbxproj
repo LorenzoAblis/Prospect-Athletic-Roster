@@ -21,6 +21,8 @@
 		81368E432AEAC5B70049D81D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368E422AEAC5B70049D81D /* Team.swift */; };
 		81368E442AEAC5B70049D81D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368E422AEAC5B70049D81D /* Team.swift */; };
 		81368E452AEAC5B70049D81D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368E422AEAC5B70049D81D /* Team.swift */; };
+		8198EFC92AF2A44C00B7BB4E /* AddAthleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198EFC82AF2A44C00B7BB4E /* AddAthleteView.swift */; };
+		8198EFCD2AF2AC5500B7BB4E /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198EFCC2AF2AC5500B7BB4E /* TeamView.swift */; };
 		81B98E4E2AE8186700C71D83 /* Prospect_Athletic_RosterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B98E4D2AE8186700C71D83 /* Prospect_Athletic_RosterApp.swift */; };
 		81B98E502AE8186700C71D83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B98E4F2AE8186700C71D83 /* ContentView.swift */; };
 		81B98E522AE8186800C71D83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B98E512AE8186800C71D83 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		81368E2F2AEAC4950049D81D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81368E3E2AEAC5A20049D81D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		81368E422AEAC5B70049D81D /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		8198EFC82AF2A44C00B7BB4E /* AddAthleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAthleteView.swift; sourceTree = "<group>"; };
+		8198EFCC2AF2AC5500B7BB4E /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
 		81B98E4A2AE8186700C71D83 /* Prospect Athletic Roster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prospect Athletic Roster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B98E4D2AE8186700C71D83 /* Prospect_Athletic_RosterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect_Athletic_RosterApp.swift; sourceTree = "<group>"; };
 		81B98E4F2AE8186700C71D83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 			children = (
 				81B98E4D2AE8186700C71D83 /* Prospect_Athletic_RosterApp.swift */,
 				81B98E4F2AE8186700C71D83 /* ContentView.swift */,
+				8198EFC82AF2A44C00B7BB4E /* AddAthleteView.swift */,
+				8198EFCC2AF2AC5500B7BB4E /* TeamView.swift */,
 				81368E3E2AEAC5A20049D81D /* DataManager.swift */,
 				81368E422AEAC5B70049D81D /* Team.swift */,
 				81368E2F2AEAC4950049D81D /* GoogleService-Info.plist */,
@@ -297,8 +303,10 @@
 			files = (
 				81368E3F2AEAC5A20049D81D /* DataManager.swift in Sources */,
 				81B98E502AE8186700C71D83 /* ContentView.swift in Sources */,
+				8198EFC92AF2A44C00B7BB4E /* AddAthleteView.swift in Sources */,
 				81368E432AEAC5B70049D81D /* Team.swift in Sources */,
 				81B98E4E2AE8186700C71D83 /* Prospect_Athletic_RosterApp.swift in Sources */,
+				8198EFCD2AF2AC5500B7BB4E /* TeamView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
