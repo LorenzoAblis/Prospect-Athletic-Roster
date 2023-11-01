@@ -13,10 +13,9 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            List(dataManager.teams, id: \.self) { team in
-                Text(team.name)
-                ForEach(team.players, id: \.self) { player in
-                    Text(player.name)
+            ForEach(dataManager.teams, id: \.self) { team in
+                ForEach(team.coaches, id: \.self) { coach in
+                    Text("Coach: \(coach.name)")
                 }
             }
         }
