@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+enum UpdateType{
+    case add
+    case remove
+}

@@ -21,6 +21,7 @@
 		81368E432AEAC5B70049D81D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368E422AEAC5B70049D81D /* Team.swift */; };
 		81368E442AEAC5B70049D81D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368E422AEAC5B70049D81D /* Team.swift */; };
 		81368E452AEAC5B70049D81D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368E422AEAC5B70049D81D /* Team.swift */; };
+		81B1B2222AF550D30082BBBA /* UpdateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1B2212AF550D30082BBBA /* UpdateType.swift */; };
 		81B98E4E2AE8186700C71D83 /* Prospect_Athletic_RosterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B98E4D2AE8186700C71D83 /* Prospect_Athletic_RosterApp.swift */; };
 		81B98E502AE8186700C71D83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B98E4F2AE8186700C71D83 /* ContentView.swift */; };
 		81B98E522AE8186800C71D83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B98E512AE8186800C71D83 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		81368E2F2AEAC4950049D81D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81368E3E2AEAC5A20049D81D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		81368E422AEAC5B70049D81D /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		81B1B2212AF550D30082BBBA /* UpdateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateType.swift; sourceTree = "<group>"; };
 		81B98E4A2AE8186700C71D83 /* Prospect Athletic Roster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prospect Athletic Roster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B98E4D2AE8186700C71D83 /* Prospect_Athletic_RosterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect_Athletic_RosterApp.swift; sourceTree = "<group>"; };
 		81B98E4F2AE8186700C71D83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				81B98E4D2AE8186700C71D83 /* Prospect_Athletic_RosterApp.swift */,
 				81B98E4F2AE8186700C71D83 /* ContentView.swift */,
 				81368E3E2AEAC5A20049D81D /* DataManager.swift */,
+				81B1B2212AF550D30082BBBA /* UpdateType.swift */,
 				81368E422AEAC5B70049D81D /* Team.swift */,
 				81368E2F2AEAC4950049D81D /* GoogleService-Info.plist */,
 				81B98E512AE8186800C71D83 /* Assets.xcassets */,
@@ -299,6 +302,7 @@
 				81B98E502AE8186700C71D83 /* ContentView.swift in Sources */,
 				81368E432AEAC5B70049D81D /* Team.swift in Sources */,
 				81B98E4E2AE8186700C71D83 /* Prospect_Athletic_RosterApp.swift in Sources */,
+				81B1B2222AF550D30082BBBA /* UpdateType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
