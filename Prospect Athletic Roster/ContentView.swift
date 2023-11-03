@@ -15,9 +15,13 @@ struct ContentView: View {
         VStack {
             ForEach(dataManager.teams, id: \.self) { team in
                 Text(team.name)
-//                ForEach(team.coaches, id: \.self) { coach in
-//                    Text("Coach: \(coach.name)")
-//                }
+            }
+            Button(action: {
+                Task {
+                    await dataManager.addPlayer(teamID: "JMHCLm7UxFHD0rH04Emo", name: "Final Test", position: "asdasd", year: "Sophomore")
+                }
+            }) {
+                Text("asdasdasd")
             }
         }
         .padding()

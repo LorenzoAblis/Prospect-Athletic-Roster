@@ -27,13 +27,17 @@ struct AddAthleteView: View {
                     .textFieldStyle(.roundedBorder)
                 
                 Button(action: {
-                    dataManager.addTeam(name: teamName, season: teamSeason)
+                    Task {
+                        try await dataManager.addTeam(name: teamName, season: teamSeason)
+                    }
                 }) {
                     Text("Add Team")
                 }
             }
         }.task {
-            await dataManager.fetchTeams()
+            Task {
+                try await dataManager.fetchTeams()
+            }
         }
     }
 }

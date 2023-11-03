@@ -22,13 +22,21 @@ struct TeamView: View {
             Text(name)
             
             ForEach(coaches, id: \.id) { coach in
-                Text(coach.name)
+                Button(action: {
+                    Task {
+                        try await dataManager.deleteCoach(teamID: teamID, coachID: coach.id)
+                    }
+                }) {
+                    Text(coach.name)
+                }
             }
             
             TextField("Coach Name: ", text: $coachName)
             
             Button(action: {
-                dataManager.addCoach(teamID: teamID, name: coachName, position: "")
+                Task {
+                    try await dataManager.addCoach(teamID: teamID, name: coachName, position: "")
+                }
             }) {
                 Text("Add Coach")
             }
