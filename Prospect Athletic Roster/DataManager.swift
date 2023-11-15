@@ -14,6 +14,7 @@ import Foundation
 class DataManager: ObservableObject {
     @Published var teams: [Team] = []
     
+    
     init() {
         fetchTeams {
             
