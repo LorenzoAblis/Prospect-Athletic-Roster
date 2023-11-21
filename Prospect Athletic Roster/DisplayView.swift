@@ -8,33 +8,31 @@
 import SwiftUI
 import Firebase
 
+
 struct DisplayView: View {
-    
-    @ObservedObject var model = DataManager()
-    
-    
+    @ObservedObject var dataManager = DataManager()
     
     var body: some View {
-        
-        //        List (model.teama) {item in
-        //            Text(item)
-        //
         NavigationView {
             VStack {
+                Button(action: {
+                    Task {
+                        await dataManager.fetchTeams()
+                    }
+                }) {
+                    Text("Refresh")
+                }
                 Text("Teams")
                     .font(.headline)
-                ForEach(model.teams, id: \.self) { team in
-                    
-//                    Text(team.name)
-                    NavigationLink(destination: TeamView(teamID: team.id)) {
+                ForEach(dataManager.teams, id: \.self) { team in
+                    NavigationLink(destination: TeamView(dataManager: dataManager, team: team.self)) {
                         Text(team.name)
                     }
-                    
                 }
-                
-                
-                
             }
+        }
+        .task {
+            await dataManager.fetchTeams()
         }
     }
 }
@@ -42,8 +40,6 @@ struct DisplayView: View {
 struct DisplayView_Previews: PreviewProvider {
     static var previews: some View {
         DisplayView()
-        
-        
-        
+            .environmentObject(DataManager())
     }
 }

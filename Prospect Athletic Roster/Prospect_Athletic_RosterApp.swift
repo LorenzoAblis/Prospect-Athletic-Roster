@@ -24,7 +24,7 @@ struct Prospect_Athletic_RosterApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DisplayView()
                 .environmentObject(dataManager)
         }
     }

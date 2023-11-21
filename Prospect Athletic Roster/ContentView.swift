@@ -17,9 +17,9 @@ struct ContentView: View {
                 Text(team.name)
             }
             Button(action: {
-                Task {
-                    await dataManager.addPlayer(teamID: "JMHCLm7UxFHD0rH04Emo", name: "Final Test", position: "asdasd", year: "Sophomore")
-                }
+//                Task {
+//                    await dataManager.addPlayer(teamID: "JMHCLm7UxFHD0rH04Emo", name: "Final Test", position: "asdasd", year: "Sophomore")
+//                }
             }) {
                 Text("asdasdasd")
             }

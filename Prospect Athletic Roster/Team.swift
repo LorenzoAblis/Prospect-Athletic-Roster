@@ -23,6 +23,7 @@ struct Coach: Hashable, Codable, Identifiable {
 
 struct Player: Hashable, Codable, Identifiable {
     var id: String
-    var year: String
+    var name: String
     var position: String
+    var year: String
 }

@@ -30,6 +30,9 @@ class DataManager: ObservableObject {
                 let coaches_collection = team_document.reference.collection("coaches")
                 let coach_snapshot = try await coaches_collection.getDocuments()
                 
+                let players_collection = team_document.reference.collection("players")
+                let player_snapshot = try await players_collection.getDocuments()
+                
                 for coach_document in coach_snapshot.documents {
                     var coach = Coach(id: coach_document.documentID, name: "", positon: "")
                     let coach_data = coach_document.data()
@@ -37,6 +40,19 @@ class DataManager: ObservableObject {
                     coach.name = coach_data["name"] as? String ?? ""
                     coach.positon = coach_data["position"] as? String ?? ""
                     team.coaches.append(coach)
+                }
+                
+                for player_document in player_snapshot.documents {
+                    var player = Player(id: player_document.documentID, name: "", position: "", year: "")
+                    let player_data = player_document.data()
+                    
+                    player.name = player_data["name"] as? String ?? ""
+                    player.position = player_data["position"] as? String ?? ""
+                    player.year = player_data["year"] as? String ?? ""
+                    
+//                    coach.name = coach_data["name"] as? String ?? ""
+//                    coach.positon = coach_data["position"] as? String ?? ""
+                    team.players.append(player)
                 }
                 
                 team.name = team_data["name"] as? String ?? ""
